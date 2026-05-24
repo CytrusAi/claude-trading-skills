@@ -254,5 +254,8 @@ A comprehensive catalog of all 55 Claude Trading Skills organized by category. B
 | Ibd Distribution Day Monitor | -- | -- | -- |
 | Parabolic Short Trade Planner | -- | -- | -- |
 | Trading Skills Navigator | -- | -- | -- |
+| Ai Buildout | Required | -- | -- |
+| Mover Screener | Required | Recommended | -- |
+| Performance Tracker | -- | -- | Required |
 
 "--" means not required. "Optional" means functionality is enhanced but the skill works without it.

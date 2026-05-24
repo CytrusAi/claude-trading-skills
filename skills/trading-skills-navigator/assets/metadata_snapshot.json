@@ -2,6 +2,32 @@
   "schema_version": 1,
   "skills": [
     {
+      "category": "swing-opportunity",
+      "difficulty": "advanced",
+      "display_name": "AI Buildout",
+      "id": "ai-buildout",
+      "integrations": [
+        {
+          "id": "fmp",
+          "requirement": "required",
+          "type": "market_data"
+        },
+        {
+          "id": "unusual_whales",
+          "requirement": "optional",
+          "type": "market_data"
+        },
+        {
+          "id": "alpaca",
+          "requirement": "optional",
+          "type": "broker"
+        }
+      ],
+      "status": "production",
+      "summary": "Map the AI-datacenter buildout value chain to tickers, find the binding layer that is heating up, track hyperscaler capex (the leading indicator), and grade whether the buildout thesis is still intact.",
+      "timeframe": "weekly"
+    },
+    {
       "category": "strategy-research",
       "difficulty": "advanced",
       "display_name": "Backtest Expert",
@@ -508,6 +534,37 @@
       "timeframe": "daily"
     },
     {
+      "category": "swing-opportunity",
+      "difficulty": "advanced",
+      "display_name": "Mover Screener",
+      "id": "mover-screener",
+      "integrations": [
+        {
+          "id": "finviz",
+          "requirement": "recommended",
+          "type": "screener"
+        },
+        {
+          "id": "fmp",
+          "requirement": "required",
+          "type": "market_data"
+        },
+        {
+          "id": "unusual_whales",
+          "requirement": "optional",
+          "type": "market_data"
+        },
+        {
+          "id": "alpaca",
+          "requirement": "optional",
+          "type": "broker"
+        }
+      ],
+      "status": "production",
+      "summary": "Hunt high-beta secondary \"mover\" stocks market-wide for an options campaign, bucketing Stage 2 uptrends as CALL and Stage 4 breakdowns as PUT candidates, each pre-checked by an options liquidity gate.",
+      "timeframe": "daily"
+    },
+    {
       "category": "advanced-satellite",
       "difficulty": "advanced",
       "display_name": "Options Strategy Advisor",
@@ -575,6 +632,27 @@
       "status": "production",
       "summary": "Screen post-earnings gap-up stocks for PEAD (Post-Earnings Announcement Drift) patterns.",
       "timeframe": "event-driven"
+    },
+    {
+      "category": "trade-memory",
+      "difficulty": "intermediate",
+      "display_name": "Performance Tracker",
+      "id": "performance-tracker",
+      "integrations": [
+        {
+          "id": "alpaca",
+          "requirement": "required",
+          "type": "broker"
+        },
+        {
+          "id": "thesis_files",
+          "requirement": "optional",
+          "type": "local_file"
+        }
+      ],
+      "status": "production",
+      "summary": "Turn an Alpaca account and thesis bookkeeping into quantstats tearsheets — an account-level report vs SPY and a strategy-level trade ledger that measures return on deployed capital (per-trade R) instead of the cash-diluted account.",
+      "timeframe": "weekly"
     },
     {
       "category": "core-portfolio",

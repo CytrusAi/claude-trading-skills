@@ -220,7 +220,9 @@ def pre_filter_stock(quote: dict) -> tuple:
     price = quote.get("price", 0)
     year_high = quote.get("yearHigh", 0)
     year_low = quote.get("yearLow", 0)
-    avg_volume = quote.get("avgVolume", 0)
+    # FMP /stable/quote returns `volume` (no `avgVolume`); v3 returned `avgVolume`.
+    # Prefer avgVolume when present, else fall back to the day's volume.
+    avg_volume = quote.get("avgVolume") or quote.get("volume", 0)
 
     if price <= 10:
         return False, 0
