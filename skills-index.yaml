@@ -9,6 +9,35 @@ categories:
 - advanced-satellite
 - meta
 skills:
+- id: ai-buildout
+  display_name: AI Buildout
+  category: swing-opportunity
+  status: production
+  summary: Map the AI-datacenter buildout value chain to tickers, find the binding
+    layer that is heating up, track hyperscaler capex (the leading indicator), and
+    grade whether the buildout thesis is still intact.
+  timeframe: weekly
+  difficulty: advanced
+  integrations:
+  - id: fmp
+    type: market_data
+    requirement: required
+    note: Technicals, capex (cash-flow), price targets via FMP /stable/
+  - id: unusual_whales
+    type: market_data
+    requirement: optional
+    note: IV rank, dealer gamma, market-wide flow
+  - id: alpaca
+    type: broker
+    requirement: optional
+    note: Options liquidity gate
+  inputs:
+  - value_chain_taxonomy
+  - hyperscaler_capex
+  outputs:
+  - binding_layer
+  - tradeable_movers
+  - thesis_health
 - id: backtest-expert
   display_name: Backtest Expert
   category: strategy-research
@@ -617,6 +646,38 @@ skills:
   - market_top_composite_score
   workflows:
   - market-regime-daily
+- id: mover-screener
+  display_name: Mover Screener
+  category: swing-opportunity
+  status: production
+  summary: Hunt high-beta secondary "mover" stocks market-wide for an options campaign,
+    bucketing Stage 2 uptrends as CALL and Stage 4 breakdowns as PUT candidates,
+    each pre-checked by an options liquidity gate.
+  timeframe: daily
+  difficulty: advanced
+  integrations:
+  - id: finviz
+    type: screener
+    requirement: recommended
+    note: finvizfinance universe prefilter (free; Elite optional)
+  - id: fmp
+    type: market_data
+    requirement: required
+    note: Per-name technicals via FMP /stable/
+  - id: unusual_whales
+    type: market_data
+    requirement: optional
+    note: Squeeze, IV rank, dealer gamma, market-wide flow
+  - id: alpaca
+    type: broker
+    requirement: optional
+    note: Options liquidity gate
+  inputs:
+  - high_beta_universe
+  outputs:
+  - call_candidates
+  - put_candidates
+  - smart_money_flow
 - id: options-strategy-advisor
   display_name: Options Strategy Advisor
   category: advanced-satellite
@@ -700,6 +761,30 @@ skills:
   - pead_signal_list
   - breakout_triggers
   workflows: []
+- id: performance-tracker
+  display_name: Performance Tracker
+  category: trade-memory
+  status: production
+  summary: Turn an Alpaca account and thesis bookkeeping into quantstats tearsheets —
+    an account-level report vs SPY and a strategy-level trade ledger that measures
+    return on deployed capital (per-trade R) instead of the cash-diluted account.
+  timeframe: weekly
+  difficulty: intermediate
+  integrations:
+  - id: alpaca
+    type: broker
+    requirement: required
+    note: Account equity curve + live option-leg P&L
+  - id: thesis_files
+    type: local_file
+    requirement: optional
+    note: Thesis YAMLs (state/theses) for the trade ledger
+  inputs:
+  - account_equity_curve
+  - thesis_ledger
+  outputs:
+  - performance_tearsheet
+  - trade_returns
 - id: portfolio-manager
   display_name: Portfolio Manager
   category: core-portfolio

@@ -21,6 +21,7 @@ Hand-written guides (marked with ★) follow a detailed 10-section structure. Au
 
 | Skill | Description | API |
 |-------|-------------|-----|
+| [Ai Buildout]({{ '/en/skills/ai-buildout/' | relative_url }}) | Turn the AI-datacenter buildout into tradeable options signals via a value-chain map (power, grid, cooling, datacente... | <span class="badge badge-api">FMP Required</span> |
 | [Backtest Expert]({{ '/en/skills/backtest-expert/' | relative_url }}) ★ | Expert guidance for systematic backtesting of trading strategies | <span class="badge badge-free">No API</span> |
 | [Breadth Chart Analyst]({{ '/en/skills/breadth-chart-analyst/' | relative_url }}) | This skill should be used when analyzing market breadth charts, specifically the S&P 500 Breadth Index (200-Day MA ba... | <span class="badge badge-free">No API</span> |
 | [Breakout Trade Planner]({{ '/en/skills/breakout-trade-planner/' | relative_url }}) | Generate Minervini-style breakout trade plans from VCP screener output with worst-case risk calculation, portfolio he... | <span class="badge badge-free">No API</span> |
@@ -52,10 +53,12 @@ Hand-written guides (marked with ★) follow a detailed 10-section structure. Au
 | [Market Environment Analysis]({{ '/en/skills/market-environment-analysis/' | relative_url }}) | Comprehensive market environment analysis and reporting tool | <span class="badge badge-free">No API</span> |
 | [Market News Analyst]({{ '/en/skills/market-news-analyst/' | relative_url }}) ★ | This skill should be used when analyzing recent market-moving news events and their impact on equity markets and comm... | <span class="badge badge-free">No API</span> |
 | [Market Top Detector]({{ '/en/skills/market-top-detector/' | relative_url }}) | Detects market top probability using O'Neil Distribution Days, Minervini Leading Stock Deterioration, and Monty Defen... | <span class="badge badge-free">No API</span> |
+| [Mover Screener]({{ '/en/skills/mover-screener/' | relative_url }}) | Hunt high-beta secondary "mover" stocks market-wide for an options-trading campaign | <span class="badge badge-api">FMP Required</span> <span class="badge badge-optional">FINVIZ Optional</span> |
 | [Options Strategy Advisor]({{ '/en/skills/options-strategy-advisor/' | relative_url }}) | Options trading strategy analysis and simulation tool | <span class="badge badge-free">No API</span> <span class="badge badge-optional">FMP Optional</span> |
 | [Pair Trade Screener]({{ '/en/skills/pair-trade-screener/' | relative_url }}) | Statistical arbitrage tool for identifying and analyzing pair trading opportunities | <span class="badge badge-api">FMP Required</span> |
 | [Parabolic Short Trade Planner]({{ '/en/skills/parabolic-short-trade-planner/' | relative_url }}) | Screen US equities for parabolic exhaustion patterns and generate conditional pre-market short plans, then evaluate i... | <span class="badge badge-api">FMP Required</span> |
 | [PEAD Screener]({{ '/en/skills/pead-screener/' | relative_url }}) | Screen post-earnings gap-up stocks for PEAD (Post-Earnings Announcement Drift) patterns | <span class="badge badge-api">FMP Required</span> |
+| [Performance Tracker]({{ '/en/skills/performance-tracker/' | relative_url }}) | Turn a paper/live trading account and its thesis bookkeeping into quantstats performance tearsheets | <span class="badge badge-api">Alpaca Required</span> |
 | [Portfolio Manager]({{ '/en/skills/portfolio-manager/' | relative_url }}) | Comprehensive portfolio analysis using Alpaca MCP Server integration to fetch holdings and positions, then analyze as... | <span class="badge badge-api">Alpaca Required</span> |
 | [Position Sizer]({{ '/en/skills/position-sizer/' | relative_url }}) ★ | Calculate risk-based position sizes for long stock trades | <span class="badge badge-free">No API</span> |
 | [Scenario Analyzer]({{ '/en/skills/scenario-analyzer/' | relative_url }}) | Skill that analyzes 18-month scenarios from a news headline | <span class="badge badge-free">No API</span> |

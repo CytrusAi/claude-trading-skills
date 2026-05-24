@@ -1,0 +1,136 @@
+# AI-buildout value chain — layer -> ticker map (editable).
+# The buildout is a stack. Each layer throws movers when IT becomes the binding
+# constraint. This file is the skill's IP; edit freely. Tickers are US-listed
+# names with (mostly) tradeable monthly options. Order = roughly upstream
+# (power) to downstream (hosting), but the binding layer rotates.
+#
+# version bumps whenever the map changes materially (used in report headers).
+version: 1
+updated: "2026-05-23"
+
+# Who FUNDS the buildout. Capex from these names is the leading indicator for
+# the whole stack. NVDA datacenter revenue is the demand read-through.
+capex_proxies:
+  hyperscalers: [MSFT, GOOGL, AMZN, META, ORCL]
+  silicon_demand: [NVDA]          # datacenter revenue = downstream demand signal
+  neocloud_capex: [CRWV, NBIS, ORCL]  # GPU-cloud buildout spend
+
+# Broad-market context tickers (the "take the market into account" overlay).
+# Used to read tailwind/headwind, not as trade candidates themselves.
+market_context:
+  sector_etfs: [SMH, XLU, XLE, XLK]   # semis, utilities, energy, tech
+  benchmark: SPY
+
+layers:
+  power_generation:
+    label: "Power generation"
+    desc: "gas turbines, nuclear, IPPs — the paper's headline binding constraint"
+    tickers: [VST, CEG, GEV, OKLO, SMR, TLN, NRG, CWEN, NRGV]
+    bottleneck_tells:
+      - "power purchase agreement"
+      - "PPA"
+      - "interconnect queue"
+      - "turbine backlog"
+      - "nuclear restart"
+      - "sold out"
+      - "lead time"
+      - "behind the meter"
+    notes: "Aschenbrenner's core gate: GW of clean firm power, not chips, caps the buildout."
+
+  grid_electrical:
+    label: "Grid / electrical"
+    desc: "transformers, switchgear, cabling, power distribution"
+    tickers: [ETN, PWR, GEV, NVT, AEIS, HUBB, POWL, AMPS]
+    bottleneck_tells:
+      - "transformer lead time"
+      - "switchgear backlog"
+      - "electrical equipment shortage"
+      - "order backlog"
+      - "book-to-bill"
+    notes: "Transformers/switchgear have multi-year lead times — a quieter bottleneck."
+
+  cooling_thermal:
+    label: "Cooling / thermal"
+    desc: "liquid cooling, thermal management, power chains for racks"
+    tickers: [VRT, MOD, COMT, BWXT]
+    bottleneck_tells:
+      - "liquid cooling"
+      - "direct-to-chip"
+      - "thermal"
+      - "backlog"
+      - "capacity expansion"
+    notes: "Rack power density rising fast -> liquid cooling becomes mandatory."
+
+  datacenter_build:
+    label: "Datacenter build / construction"
+    desc: "construction, MEP contractors, REITs, modular DC"
+    tickers: [FIX, PWR, EME, DLR, SRE, ETN, J]
+    bottleneck_tells:
+      - "data center backlog"
+      - "bookings"
+      - "remaining performance obligation"
+      - "RPO"
+      - "construction backlog"
+    notes: "Backlog + RPO are the cleanest forward tells here."
+
+  compute_accelerators:
+    label: "Compute / accelerators"
+    desc: "GPUs, custom AI silicon, accelerators"
+    tickers: [NVDA, AMD, AVGO, MRVL, TSM]
+    bottleneck_tells:
+      - "allocation"
+      - "supply constrained"
+      - "sold out"
+      - "lead time"
+      - "next-gen ramp"
+    notes: "The famous bottleneck of 2023-24; watch for it un-binding as power binds."
+
+  hbm_memory:
+    label: "HBM / memory"
+    desc: "high-bandwidth memory, advanced packaging demand"
+    tickers: [MU, WDC, STX]
+    bottleneck_tells:
+      - "HBM sold out"
+      - "sold out"
+      - "qualified"
+      - "capacity"
+      - "allocation"
+    notes: "HBM is the memory chokepoint; MU the only clean US-listed pure-ish play."
+
+  networking_optical:
+    label: "Networking / optical"
+    desc: "switches, optics, transceivers, DSPs, interconnect"
+    tickers: [ANET, CRDO, COHR, LITE, FN, MRVL, ALAB, CIEN]
+    bottleneck_tells:
+      - "800G"
+      - "1.6T"
+      - "transceiver"
+      - "optical ramp"
+      - "design win"
+      - "capacity"
+    notes: "Scale-up/scale-out networking; CRDO/ALAB the higher-beta torque."
+
+  semicap:
+    label: "Semicap / equipment"
+    desc: "fab, test, probe, subsystem equipment"
+    tickers: [UCTT, FORM, AEIS, ICHR, COHU, KLAC, LRCX, AMAT]
+    bottleneck_tells:
+      - "WFE"
+      - "wafer fab equipment"
+      - "utilization"
+      - "orders"
+      - "upcycle"
+      - "probe card"
+    notes: "Second-derivative of fab buildout; UCTT/FORM/ICHR the high-torque names."
+
+  neocloud_hosting:
+    label: "Neocloud / GPU hosting"
+    desc: "GPU-as-a-service, crypto-miner pivots, AI hosting"
+    tickers: [CRWV, NBIS, APLD, IREN, CORZ, WULF, GLXY, CIFR]
+    bottleneck_tells:
+      - "contracted backlog"
+      - "take-or-pay"
+      - "GPU capacity"
+      - "lease"
+      - "power secured"
+    notes: "Highest beta in the stack; contracted-backlog is the key de-risk tell."

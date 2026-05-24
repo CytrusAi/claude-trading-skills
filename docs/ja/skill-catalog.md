@@ -217,6 +217,9 @@ Claude Trading Skillsの全スキルをカテゴリ別に紹介します。各�
 | Edge Candidate Agent | 任意 | - | - |
 | Kanchi Dividend Review Monitor | 任意 | - | - |
 | Kanchi Dividend SOP | 任意 | - | - |
+| Ai Buildout | 必須 | - | - |
+| Mover Screener | 必須 | 推奨 | - |
+| Performance Tracker | - | - | 必須 |
 | その他すべてのスキル | - | - | - |
 
 「-」は不要を意味します。「任意」はあれば機能強化、なくても基本機能は動作します。
