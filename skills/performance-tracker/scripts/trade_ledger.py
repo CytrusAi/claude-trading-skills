@@ -41,7 +41,7 @@ Exit schema — add this block to a thesis when it closes, and set status: CLOSE
     exit_date: 2026-05-26
     realized_pnl: -250.0        # net $ across ALL spreads (+ = gain)
     capital_at_risk: 930.0      # optional; else falls back to position_target.max_loss
-    note: "Closed combo 4ee22148 at $6.80 credit vs $9.30 debit"
+    note: "Closed combo (order id) at $6.80 credit vs $9.30 debit"
 
 Usage
 -----

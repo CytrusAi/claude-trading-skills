@@ -3,7 +3,7 @@ layout: default
 title: "Performance Tracker"
 grand_parent: 日本語
 parent: スキルガイド
-nav_order: 43
+nav_order: 11
 lang_peer: /en/skills/performance-tracker/
 permalink: /ja/skills/performance-tracker/
 generated: true
